@@ -1,0 +1,232 @@
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap');
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #5a3d3d;
+    text-align: center;
+}
+
+/* HERO SECTION - Brand & Logo */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    border-bottom: 3px solid #f5b5c8;
+    flex-wrap: wrap; /* Responsif */
+}
+
+/* TEXT SECTION (KIRI) */
+.text-section {
+    text-align: center;
+    width: 100%;
+    max-width: 850px; /* Lebih longgar */
+    margin: 0 auto;
+    padding: 25px;
+}
+
+.text-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2em; /* Sedikit lebih besar */
+    color: #7a4c74;
+    text-shadow: 2px 2px 5px rgba(255, 100, 150, 0.4);
+    animation: fadeInLeft 1s ease-out;
+}
+
+.text-section p {
+    font-size: 1.3em; /* Perbesar sedikit */
+    color: #904c78;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+/* LOGO SECTION (KANAN) */
+.logo-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px; /* Tambah jarak agar rapi */
+}
+
+.logo-section img {
+    width: 270px; /* Perbesar logo */
+    height: auto;
+    margin-top: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efek Hover pada Logo */
+.logo-section img:hover {
+    transform: scale(1.1);
+}
+
+/* ABOUT US - Tengah & Tidak Mepet */
+.about-us {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* PRODUK GRID */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Tambah jarak antar produk */
+    padding: 40px;
+    justify-content: center;
+}
+
+/* CARD PRODUK */
+.product {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255, 150, 180, 0.3);
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 0.6s forwards ease-out;
+}
+
+/* GAMBAR PRODUK */
+.product img {
+    width: 180px; /* Lebih besar */
+    height: 180px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* EFEK HOVER - GAMBAR MEMBESAR */
+.product:hover img {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+/* HOVER EFEK PADA PRODUK */
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(255, 100, 150, 0.3);
+}
+
+/* FOOTER */
+footer {
+    background: #ffdde1;
+    color: #7a4c74;
+    padding: 20px;
+    font-size: 1.1em;
+    border-top: 3px solid #f5b5c8;
+}
+
+/* RESPONSIVE DESIGN */
+@media (min-width: 900px) {
+    .hero {
+        flex-wrap: nowrap;
+    }
+
+    .text-section {
+        text-align: left;
+        width: 50%;
+        margin-left: 50px;
+    }
+
+    .logo-section {
+        width: 50%;
+        text-align: right;
+        margin-top: 0;
+    }
+
+    .logo-section img {
+        width: 350px; /* Besar di desktop */
+    }
+}
+
+@media (max-width: 900px) {
+    .product-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo-section img {
+        width: 270px; /* Sedang di tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .text-section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .logo-section img {
+        width: 220px; /* Lebih kecil di HP */
+    }
+}
+
+/* ANIMASI MASUK */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ANIMASI PRODUK */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ANIMASI MASUK TEKS */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
